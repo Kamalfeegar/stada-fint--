@@ -1,10 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 
 
 function LandingPage() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/bookinPage')
+
+
+  } 
   return (
     <div>
       <Header/>
@@ -13,8 +19,8 @@ function LandingPage() {
       <input type='text' className='postnummer'/>
       <button>VÄLJTJÄNST</button>
 
-      <button>Gå Vidare</button>
-      <Link to={'./BookingPage'}>Dina bokade städningar</Link>
+      <button onClick={handleClick}>Gå Vidare</button>
+     
       
 
     </div>
